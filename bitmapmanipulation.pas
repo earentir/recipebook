@@ -27,11 +27,19 @@ begin
 
       encoder.CopyFrom(filedata, filedata.Size);
       Result := output.DataString;
+
+      encoder.Free;
     end;
-  end;
+
+    filedata.Free;
+    output.Free;
+  end
+  else
+    Result := '';
 end;
 
 end.
+
 
 
 
