@@ -96,8 +96,6 @@ begin
 
   //playing with image
   ImagePreview.Picture.LoadFromFile('img/recipe.jpeg');
-
-  //writeln(bitmaptobase64('img/recipe.jpeg'));
 end;
 
 procedure TForm1.SpkToolbar1TabChanged(Sender: TObject);
