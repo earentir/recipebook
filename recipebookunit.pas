@@ -30,6 +30,7 @@ type
     SpkCheckbox1: TSpkCheckbox;
     SpkLargeButton1: TSpkLargeButton;
     SpkPane1: TSpkPane;
+    SpkPane2: TSpkPane;
     SpkRadioButton1: TSpkRadioButton;
     SpkSmallButton1: TSpkSmallButton;
     SpkTab1: TSpkTab;

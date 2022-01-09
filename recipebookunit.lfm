@@ -70,7 +70,7 @@ object Form1: TForm1
     Appearance.Element.ActiveInnerDarkColor = 16244937
     Appearance.Element.ActiveCaptionColor = 2894892
     Appearance.Element.Style = esRectangle
-    TabIndex = 0
+    TabIndex = 2
     MenuButtonCaption = '='
     ShowMenuButton = True
     OnTabChanged = SpkToolbar1TabChanged
@@ -280,7 +280,13 @@ object Form1: TForm1
       CustomAppearance.Element.ActiveCaptionColor = 8405614
       CustomAppearance.Element.Style = esRounded
       Caption = 'Recipe'
-      Panes = (      )
+      Panes = (
+        'SpkPane2'
+      )
+      object SpkPane2: TSpkPane
+        Caption = 'New Recipe'
+        Items = (        )
+      end
     end
   end
   object PageControl1: TPageControl
