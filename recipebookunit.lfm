@@ -1,0 +1,682 @@
+object Form1: TForm1
+  Left = 345
+  Height = 552
+  Top = 250
+  Width = 800
+  Caption = 'Form1'
+  ClientHeight = 552
+  ClientWidth = 800
+  OnCreate = FormCreate
+  object SpkToolbar1: TSpkToolbar
+    Left = 0
+    Height = 112
+    Top = 0
+    Width = 800
+    Color = clWhite
+    Style = spkMetroLight
+    Appearance.Tab.TabHeaderFont.Color = 9787178
+    Appearance.Tab.BorderColor = 13816015
+    Appearance.Tab.CornerRadius = 0
+    Appearance.Tab.GradientFromColor = 15856113
+    Appearance.Tab.GradientToColor = 15856113
+    Appearance.Tab.GradientType = bkSolid
+    Appearance.Tab.InactiveTabHeaderFontColor = 6908265
+    Appearance.MenuButton.CaptionFont.Color = clWhite
+    Appearance.MenuButton.IdleFrameColor = 11822592
+    Appearance.MenuButton.IdleGradientFromColor = 11822592
+    Appearance.MenuButton.IdleGradientToColor = 11822592
+    Appearance.MenuButton.IdleGradientType = bkSolid
+    Appearance.MenuButton.IdleCaptionColor = clWhite
+    Appearance.MenuButton.HotTrackFrameColor = 14515456
+    Appearance.MenuButton.HotTrackGradientFromColor = 14515456
+    Appearance.MenuButton.HotTrackGradientToColor = 14515456
+    Appearance.MenuButton.HotTrackGradientType = bkSolid
+    Appearance.MenuButton.HotTrackCaptionColor = clWhite
+    Appearance.MenuButton.ActiveFrameColor = 9852160
+    Appearance.MenuButton.ActiveGradientFromColor = 9852160
+    Appearance.MenuButton.ActiveGradientToColor = 9852160
+    Appearance.MenuButton.ActiveGradientType = bkSolid
+    Appearance.MenuButton.ActiveCaptionColor = clWhite
+    Appearance.MenuButton.ShapeStyle = mbssRectangle
+    Appearance.Pane.BorderDarkColor = 13816015
+    Appearance.Pane.BorderLightColor = 16315117
+    Appearance.Pane.CaptionBgColor = 15856113
+    Appearance.Pane.CaptionFont.Color = 6908265
+    Appearance.Pane.GradientFromColor = 15856113
+    Appearance.Pane.GradientToColor = 15856113
+    Appearance.Pane.GradientType = bkSolid
+    Appearance.Pane.HotTrackBrightnessChange = 0
+    Appearance.Pane.Style = psDividerFlat
+    Appearance.Element.CaptionFont.Color = 4144959
+    Appearance.Element.IdleFrameColor = 13487565
+    Appearance.Element.IdleGradientFromColor = 14671839
+    Appearance.Element.IdleGradientToColor = 14671839
+    Appearance.Element.IdleGradientType = bkSolid
+    Appearance.Element.IdleInnerLightColor = 15461355
+    Appearance.Element.IdleInnerDarkColor = 13487565
+    Appearance.Element.IdleCaptionColor = 6908265
+    Appearance.Element.HotTrackFrameColor = 16371364
+    Appearance.Element.HotTrackGradientFromColor = 16248808
+    Appearance.Element.HotTrackGradientToColor = 16248808
+    Appearance.Element.HotTrackGradientType = bkSolid
+    Appearance.Element.HotTrackInnerLightColor = 16248808
+    Appearance.Element.HotTrackInnerDarkColor = 16248808
+    Appearance.Element.HotTrackCaptionColor = 4144959
+    Appearance.Element.ActiveFrameColor = 14983778
+    Appearance.Element.ActiveGradientFromColor = 16244937
+    Appearance.Element.ActiveGradientToColor = 16244937
+    Appearance.Element.ActiveGradientType = bkSolid
+    Appearance.Element.ActiveInnerLightColor = 16244937
+    Appearance.Element.ActiveInnerDarkColor = 16244937
+    Appearance.Element.ActiveCaptionColor = 2894892
+    Appearance.Element.Style = esRectangle
+    TabIndex = 0
+    MenuButtonCaption = '='
+    ShowMenuButton = True
+    OnTabChanged = SpkToolbar1TabChanged
+    Tabs = (
+      'SpkTab1'
+      'SpkTab2'
+      'SpkTab3'
+    )
+    object SpkTab1: TSpkTab
+      CustomAppearance.Tab.TabHeaderFont.Color = 9126421
+      CustomAppearance.Tab.BorderColor = 14922381
+      CustomAppearance.Tab.CornerRadius = 4
+      CustomAppearance.Tab.GradientFromColor = 16115934
+      CustomAppearance.Tab.GradientToColor = 15587527
+      CustomAppearance.Tab.GradientType = bkConcave
+      CustomAppearance.Tab.InactiveTabHeaderFontColor = 9126421
+      CustomAppearance.MenuButton.CaptionFont.Color = clWhite
+      CustomAppearance.MenuButton.IdleFrameColor = 10569759
+      CustomAppearance.MenuButton.IdleGradientFromColor = 14649927
+      CustomAppearance.MenuButton.IdleGradientToColor = 12017961
+      CustomAppearance.MenuButton.IdleGradientType = bkConcave
+      CustomAppearance.MenuButton.IdleCaptionColor = clWhite
+      CustomAppearance.MenuButton.HotTrackFrameColor = 10569759
+      CustomAppearance.MenuButton.HotTrackGradientFromColor = 15179099
+      CustomAppearance.MenuButton.HotTrackGradientToColor = 12478257
+      CustomAppearance.MenuButton.HotTrackGradientType = bkConcave
+      CustomAppearance.MenuButton.HotTrackCaptionColor = clWhite
+      CustomAppearance.MenuButton.HotTrackBrightnessChange = 40
+      CustomAppearance.MenuButton.ActiveFrameColor = 11095324
+      CustomAppearance.MenuButton.ActiveGradientFromColor = 14518846
+      CustomAppearance.MenuButton.ActiveGradientToColor = 12411174
+      CustomAppearance.MenuButton.ActiveGradientType = bkConcave
+      CustomAppearance.MenuButton.ActiveCaptionColor = clWhite
+      CustomAppearance.MenuButton.ShapeStyle = mbssRounded
+      CustomAppearance.Pane.BorderDarkColor = 14335646
+      CustomAppearance.Pane.BorderLightColor = 16315117
+      CustomAppearance.Pane.CaptionBgColor = 15849922
+      CustomAppearance.Pane.CaptionFont.Color = 9126421
+      CustomAppearance.Pane.GradientFromColor = 16115934
+      CustomAppearance.Pane.GradientToColor = 15587527
+      CustomAppearance.Pane.GradientType = bkConcave
+      CustomAppearance.Element.IdleFrameColor = 14727067
+      CustomAppearance.Element.IdleGradientFromColor = 15653832
+      CustomAppearance.Element.IdleGradientToColor = 15323324
+      CustomAppearance.Element.IdleGradientType = bkConcave
+      CustomAppearance.Element.IdleInnerLightColor = 15852501
+      CustomAppearance.Element.IdleInnerDarkColor = 15520702
+      CustomAppearance.Element.IdleCaptionColor = 11631958
+      CustomAppearance.Element.HotTrackFrameColor = 10211293
+      CustomAppearance.Element.HotTrackGradientFromColor = 14351615
+      CustomAppearance.Element.HotTrackGradientToColor = 5101567
+      CustomAppearance.Element.HotTrackGradientType = bkConcave
+      CustomAppearance.Element.HotTrackInnerLightColor = 12972543
+      CustomAppearance.Element.HotTrackInnerDarkColor = 8045272
+      CustomAppearance.Element.HotTrackCaptionColor = 8864367
+      CustomAppearance.Element.HotTrackBrightnessChange = 40
+      CustomAppearance.Element.ActiveFrameColor = 5535371
+      CustomAppearance.Element.ActiveGradientFromColor = 7126014
+      CustomAppearance.Element.ActiveGradientToColor = 4035324
+      CustomAppearance.Element.ActiveGradientType = bkConcave
+      CustomAppearance.Element.ActiveInnerLightColor = 961020
+      CustomAppearance.Element.ActiveInnerDarkColor = 961020
+      CustomAppearance.Element.ActiveCaptionColor = 8405614
+      CustomAppearance.Element.Style = esRounded
+      Caption = 'Browse'
+      Panes = (
+        'SpkPane1'
+      )
+      object SpkPane1: TSpkPane
+        Caption = 'Pane'
+        Items = (
+          'SpkLargeButton1'
+          'SpkSmallButton1'
+          'SpkCheckbox1'
+          'SpkRadioButton1'
+        )
+        object SpkLargeButton1: TSpkLargeButton
+          Caption = 'Button'
+        end
+        object SpkSmallButton1: TSpkSmallButton
+          Caption = 'Button'
+          GroupBehaviour = gbBeginsGroup
+        end
+        object SpkCheckbox1: TSpkCheckbox
+          Caption = 'Checkbox'
+          TableBehaviour = tbBeginsRow
+        end
+        object SpkRadioButton1: TSpkRadioButton
+          Caption = 'RadioButton'
+          TableBehaviour = tbBeginsRow
+        end
+      end
+    end
+    object SpkTab2: TSpkTab
+      CustomAppearance.Tab.TabHeaderFont.Color = 9126421
+      CustomAppearance.Tab.BorderColor = 14922381
+      CustomAppearance.Tab.CornerRadius = 4
+      CustomAppearance.Tab.GradientFromColor = 16115934
+      CustomAppearance.Tab.GradientToColor = 15587527
+      CustomAppearance.Tab.GradientType = bkConcave
+      CustomAppearance.Tab.InactiveTabHeaderFontColor = 9126421
+      CustomAppearance.MenuButton.CaptionFont.Color = clWhite
+      CustomAppearance.MenuButton.IdleFrameColor = 10569759
+      CustomAppearance.MenuButton.IdleGradientFromColor = 14649927
+      CustomAppearance.MenuButton.IdleGradientToColor = 12017961
+      CustomAppearance.MenuButton.IdleGradientType = bkConcave
+      CustomAppearance.MenuButton.IdleCaptionColor = clWhite
+      CustomAppearance.MenuButton.HotTrackFrameColor = 10569759
+      CustomAppearance.MenuButton.HotTrackGradientFromColor = 15179099
+      CustomAppearance.MenuButton.HotTrackGradientToColor = 12478257
+      CustomAppearance.MenuButton.HotTrackGradientType = bkConcave
+      CustomAppearance.MenuButton.HotTrackCaptionColor = clWhite
+      CustomAppearance.MenuButton.HotTrackBrightnessChange = 40
+      CustomAppearance.MenuButton.ActiveFrameColor = 11095324
+      CustomAppearance.MenuButton.ActiveGradientFromColor = 14518846
+      CustomAppearance.MenuButton.ActiveGradientToColor = 12411174
+      CustomAppearance.MenuButton.ActiveGradientType = bkConcave
+      CustomAppearance.MenuButton.ActiveCaptionColor = clWhite
+      CustomAppearance.MenuButton.ShapeStyle = mbssRounded
+      CustomAppearance.Pane.BorderDarkColor = 14335646
+      CustomAppearance.Pane.BorderLightColor = 16315117
+      CustomAppearance.Pane.CaptionBgColor = 15849922
+      CustomAppearance.Pane.CaptionFont.Color = 9126421
+      CustomAppearance.Pane.GradientFromColor = 16115934
+      CustomAppearance.Pane.GradientToColor = 15587527
+      CustomAppearance.Pane.GradientType = bkConcave
+      CustomAppearance.Element.IdleFrameColor = 14727067
+      CustomAppearance.Element.IdleGradientFromColor = 15653832
+      CustomAppearance.Element.IdleGradientToColor = 15323324
+      CustomAppearance.Element.IdleGradientType = bkConcave
+      CustomAppearance.Element.IdleInnerLightColor = 15852501
+      CustomAppearance.Element.IdleInnerDarkColor = 15520702
+      CustomAppearance.Element.IdleCaptionColor = 11631958
+      CustomAppearance.Element.HotTrackFrameColor = 10211293
+      CustomAppearance.Element.HotTrackGradientFromColor = 14351615
+      CustomAppearance.Element.HotTrackGradientToColor = 5101567
+      CustomAppearance.Element.HotTrackGradientType = bkConcave
+      CustomAppearance.Element.HotTrackInnerLightColor = 12972543
+      CustomAppearance.Element.HotTrackInnerDarkColor = 8045272
+      CustomAppearance.Element.HotTrackCaptionColor = 8864367
+      CustomAppearance.Element.HotTrackBrightnessChange = 40
+      CustomAppearance.Element.ActiveFrameColor = 5535371
+      CustomAppearance.Element.ActiveGradientFromColor = 7126014
+      CustomAppearance.Element.ActiveGradientToColor = 4035324
+      CustomAppearance.Element.ActiveGradientType = bkConcave
+      CustomAppearance.Element.ActiveInnerLightColor = 961020
+      CustomAppearance.Element.ActiveInnerDarkColor = 961020
+      CustomAppearance.Element.ActiveCaptionColor = 8405614
+      CustomAppearance.Element.Style = esRounded
+      Caption = 'Create'
+      Panes = (      )
+    end
+    object SpkTab3: TSpkTab
+      CustomAppearance.Tab.TabHeaderFont.Color = 9126421
+      CustomAppearance.Tab.BorderColor = 14922381
+      CustomAppearance.Tab.CornerRadius = 4
+      CustomAppearance.Tab.GradientFromColor = 16115934
+      CustomAppearance.Tab.GradientToColor = 15587527
+      CustomAppearance.Tab.GradientType = bkConcave
+      CustomAppearance.Tab.InactiveTabHeaderFontColor = 9126421
+      CustomAppearance.MenuButton.CaptionFont.Color = clWhite
+      CustomAppearance.MenuButton.IdleFrameColor = 10569759
+      CustomAppearance.MenuButton.IdleGradientFromColor = 14649927
+      CustomAppearance.MenuButton.IdleGradientToColor = 12017961
+      CustomAppearance.MenuButton.IdleGradientType = bkConcave
+      CustomAppearance.MenuButton.IdleCaptionColor = clWhite
+      CustomAppearance.MenuButton.HotTrackFrameColor = 10569759
+      CustomAppearance.MenuButton.HotTrackGradientFromColor = 15179099
+      CustomAppearance.MenuButton.HotTrackGradientToColor = 12478257
+      CustomAppearance.MenuButton.HotTrackGradientType = bkConcave
+      CustomAppearance.MenuButton.HotTrackCaptionColor = clWhite
+      CustomAppearance.MenuButton.HotTrackBrightnessChange = 40
+      CustomAppearance.MenuButton.ActiveFrameColor = 11095324
+      CustomAppearance.MenuButton.ActiveGradientFromColor = 14518846
+      CustomAppearance.MenuButton.ActiveGradientToColor = 12411174
+      CustomAppearance.MenuButton.ActiveGradientType = bkConcave
+      CustomAppearance.MenuButton.ActiveCaptionColor = clWhite
+      CustomAppearance.MenuButton.ShapeStyle = mbssRounded
+      CustomAppearance.Pane.BorderDarkColor = 14335646
+      CustomAppearance.Pane.BorderLightColor = 16315117
+      CustomAppearance.Pane.CaptionBgColor = 15849922
+      CustomAppearance.Pane.CaptionFont.Color = 9126421
+      CustomAppearance.Pane.GradientFromColor = 16115934
+      CustomAppearance.Pane.GradientToColor = 15587527
+      CustomAppearance.Pane.GradientType = bkConcave
+      CustomAppearance.Element.IdleFrameColor = 14727067
+      CustomAppearance.Element.IdleGradientFromColor = 15653832
+      CustomAppearance.Element.IdleGradientToColor = 15323324
+      CustomAppearance.Element.IdleGradientType = bkConcave
+      CustomAppearance.Element.IdleInnerLightColor = 15852501
+      CustomAppearance.Element.IdleInnerDarkColor = 15520702
+      CustomAppearance.Element.IdleCaptionColor = 11631958
+      CustomAppearance.Element.HotTrackFrameColor = 10211293
+      CustomAppearance.Element.HotTrackGradientFromColor = 14351615
+      CustomAppearance.Element.HotTrackGradientToColor = 5101567
+      CustomAppearance.Element.HotTrackGradientType = bkConcave
+      CustomAppearance.Element.HotTrackInnerLightColor = 12972543
+      CustomAppearance.Element.HotTrackInnerDarkColor = 8045272
+      CustomAppearance.Element.HotTrackCaptionColor = 8864367
+      CustomAppearance.Element.HotTrackBrightnessChange = 40
+      CustomAppearance.Element.ActiveFrameColor = 5535371
+      CustomAppearance.Element.ActiveGradientFromColor = 7126014
+      CustomAppearance.Element.ActiveGradientToColor = 4035324
+      CustomAppearance.Element.ActiveGradientType = bkConcave
+      CustomAppearance.Element.ActiveInnerLightColor = 961020
+      CustomAppearance.Element.ActiveInnerDarkColor = 961020
+      CustomAppearance.Element.ActiveCaptionColor = 8405614
+      CustomAppearance.Element.Style = esRounded
+      Caption = 'Recipe'
+      Panes = (      )
+    end
+  end
+  object PageControl1: TPageControl
+    Left = 0
+    Height = 440
+    Top = 112
+    Width = 800
+    ActivePage = TabSheet1
+    Align = alClient
+    TabIndex = 0
+    TabOrder = 1
+    object TabSheet1: TTabSheet
+      Caption = 'Browser'
+      ClientHeight = 412
+      ClientWidth = 792
+      object Panel1: TPanel
+        Left = 0
+        Height = 412
+        Top = 0
+        Width = 792
+        Align = alClient
+        BevelOuter = bvNone
+        ClientHeight = 412
+        ClientWidth = 792
+        TabOrder = 0
+        object Panel2: TPanel
+          Left = 405
+          Height = 412
+          Top = 0
+          Width = 387
+          Align = alClient
+          BevelOuter = bvNone
+          ClientHeight = 412
+          ClientWidth = 387
+          TabOrder = 0
+          object Panel3: TPanel
+            Left = 0
+            Height = 130
+            Top = 0
+            Width = 387
+            Align = alTop
+            BevelOuter = bvNone
+            ClientHeight = 130
+            ClientWidth = 387
+            TabOrder = 0
+            object ImagePreview: TImage
+              Left = 0
+              Height = 130
+              Top = 0
+              Width = 387
+              Align = alClient
+              Center = True
+              Proportional = True
+            end
+          end
+          object Splitter2: TSplitter
+            Cursor = crVSplit
+            Left = 0
+            Height = 5
+            Top = 130
+            Width = 387
+            Align = alTop
+            ResizeAnchor = akTop
+          end
+          object Panel4: TPanel
+            Left = 0
+            Height = 277
+            Top = 135
+            Width = 387
+            Align = alClient
+            BevelOuter = bvNone
+            ClientHeight = 277
+            ClientWidth = 387
+            TabOrder = 2
+            object StringGridIngredients: TStringGrid
+              Left = 0
+              Height = 262
+              Top = 15
+              Width = 387
+              Align = alClient
+              AutoEdit = False
+              BorderStyle = bsNone
+              ColCount = 4
+              Columns = <              
+                item
+                  Title.Caption = 'Part'
+                  Width = 50
+                end              
+                item
+                  Title.Caption = 'Name'
+                  Width = 96
+                end              
+                item
+                  Title.Caption = 'UnitSize'
+                  Width = 60
+                end              
+                item
+                  Title.Caption = 'UnitType'
+                  Width = 40
+                end>
+              FixedCols = 0
+              FixedRows = 0
+              Options = [goFixedVertLine, goFixedHorzLine, goHorzLine, goColSizing, goSmoothScroll]
+              RowCount = 0
+              TabOrder = 0
+              ColWidths = (
+                50
+                96
+                60
+                40
+              )
+            end
+            object Label1: TLabel
+              Left = 0
+              Height = 15
+              Top = 0
+              Width = 387
+              Align = alTop
+              Caption = 'Ingredients'
+              ParentColor = False
+            end
+          end
+        end
+        object StringGridBrowser: TStringGrid
+          Left = 0
+          Height = 412
+          Top = 0
+          Width = 400
+          Align = alLeft
+          BorderStyle = bsNone
+          ColCount = 6
+          Columns = <          
+            item
+              Title.Caption = 'filename'
+              Visible = False
+            end          
+            item
+              Title.Caption = 'guid'
+              Visible = False
+            end          
+            item
+              Title.Caption = 'Recipe'
+              Width = 256
+            end          
+            item
+              Alignment = taCenter
+              Title.Alignment = taCenter
+              Title.ImageIndex = 2
+              Title.ImageLayout = blGlyphTop
+              Title.Caption = 'Length'
+              Width = 40
+            end          
+            item
+              Alignment = taCenter
+              Title.Alignment = taCenter
+              Title.ImageIndex = 1
+              Title.ImageLayout = blGlyphTop
+              Title.Caption = 'Difficulty'
+              Width = 40
+            end          
+            item
+              Alignment = taCenter
+              Title.Alignment = taCenter
+              Title.Caption = '€'
+              Width = 40
+            end>
+          FixedCols = 0
+          Options = [goFixedHorzLine, goHorzLine, goColSizing, goRowSelect, goDblClickAutoSize, goSmoothScroll, goScrollKeepVisible, goFixedColSizing]
+          RowCount = 1
+          TabOrder = 1
+          TitleImageList = ImageListGridHeaders16
+          TitleStyle = tsNative
+          OnSelection = StringGridBrowserSelection
+          ColWidths = (
+            0
+            0
+            256
+            40
+            40
+            40
+          )
+        end
+        object Splitter1: TSplitter
+          Left = 400
+          Height = 412
+          Top = 0
+          Width = 5
+        end
+      end
+    end
+    object TabSheet2: TTabSheet
+      Caption = 'Create'
+    end
+    object TabSheet3: TTabSheet
+      Caption = 'Recipe'
+      ClientHeight = 412
+      ClientWidth = 792
+      object Panel5: TPanel
+        Left = 397
+        Height = 412
+        Top = 0
+        Width = 395
+        Align = alClient
+        BevelOuter = bvNone
+        ClientHeight = 412
+        ClientWidth = 395
+        TabOrder = 0
+        object Panel6: TPanel
+          Left = 0
+          Height = 100
+          Top = 0
+          Width = 395
+          Align = alTop
+          BevelOuter = bvNone
+          ClientHeight = 100
+          ClientWidth = 395
+          Color = 7047523
+          ParentColor = False
+          TabOrder = 0
+          object LabelTimer: TLabel
+            Left = 0
+            Height = 100
+            Top = 0
+            Width = 395
+            Align = alClient
+            Alignment = taCenter
+            Caption = '16:20'
+            Font.CharSet = OEM_CHARSET
+            Font.Color = clBlack
+            Font.Height = -91
+            Font.Name = 'Terminal_Hex'
+            Font.Pitch = fpFixed
+            Font.Quality = fqDraft
+            Font.Style = [fsBold]
+            Layout = tlCenter
+            ParentColor = False
+            ParentFont = False
+          end
+        end
+        object Panel7: TPanel
+          Left = 0
+          Height = 312
+          Top = 100
+          Width = 395
+          Align = alClient
+          BevelOuter = bvNone
+          ClientHeight = 312
+          ClientWidth = 395
+          TabOrder = 1
+          object ImageGuide: TImage
+            Left = 0
+            Height = 312
+            Top = 0
+            Width = 395
+            Align = alClient
+          end
+        end
+      end
+      object Splitter3: TSplitter
+        Left = 392
+        Height = 412
+        Top = 0
+        Width = 5
+      end
+      object StringGridRecipeSteps: TStringGrid
+        Left = 0
+        Height = 412
+        Top = 0
+        Width = 392
+        Align = alLeft
+        BorderStyle = bsNone
+        ColCount = 2
+        Columns = <        
+          item
+            Title.Caption = 'Steps'
+            Width = 350
+          end        
+          item
+            Title.Caption = 'Time'
+            Width = 40
+          end>
+        FixedCols = 0
+        Options = [goFixedVertLine, goFixedHorzLine, goHorzLine, goSmoothScroll]
+        RowCount = 1
+        TabOrder = 2
+        TitleStyle = tsNative
+      end
+    end
+  end
+  object TimerTimeSep: TTimer
+    Interval = 500
+    OnTimer = TimerTimeSepTimer
+    Left = 719
+    Top = 56
+  end
+  object ImageListGridHeaders16: TImageList
+    Left = 536
+    Top = 32
+    Bitmap = {
+      4C69030000001000000010000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      000000000000000000230000006C0000008C00000084000000540000000A0000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0012000000A6000000FE000000FF000000FF000000FF000000FF000000EC0000
+      0064000000000000000000000000000000000000000000000000000000160000
+      00D9000000FF000000AB000000440000001A0000002400000066000000DD0000
+      00FF000000890000000000000000000000000000000000000000000000B60000
+      00FE000000630000000000000000000000FF00000099000000000000000C0000
+      00BC000000FF000000510000000000000000000000000000003B000000FF0000
+      0098000000000000000000000000000000FF0000009900000000000000000000
+      0012000000EC000000D50000000000000000000000000000008E000000FF0000
+      0024000000000000000000000000000000FF0000009900000000000000000000
+      00000000008A000000FF000000280000000000000000000000B5000000EF0000
+      0000000000000000000000000000000000FF0000009900000000000000000000
+      000000000055000000FF0000005000000037000000F4000000FF000000FF0000
+      00FF000000960000000000000000000000C30000009E00000000000000000000
+      000000000055000000FF000000500000000000000046000000F9000000FF0000
+      00AE0000000200000000000000000000000E000000C200000052000000000000
+      00000000008A000000FF00000028000000000000000000000056000000C00000
+      0008000000000000000000000000000000000000000E000000C10000002B0000
+      0012000000EC000000D500000000000000000000000000000000000000030000
+      00000000000000000000000000000000000000000000000000050000000C0000
+      00BC000000FF0000005100000000000000000000000000000000000000000000
+      000000000099000000AB00000044000000190000002400000066000000DD0000
+      00FF000000890000000000000000000000000000000000000000000000000000
+      000B000000A6000000FE000000FF000000FF000000FF000000FF000000EC0000
+      0064000000000000000000000000000000000000000000000000000000000000
+      000000000000000000220000006B0000008B00000083000000540000000A0000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      00000000000000000059000000C2000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      00000000001F000000F1000000B2000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0002000000C1000000EA00000017000000000000000000000000000000000000
+      000000000012000000DE0000009F000000120000000000000000000000000000
+      0074000000FF0000005000000000000000000000000000000000000000000000
+      00000000009E000000F7000000F6000000E900000058000000000000002D0000
+      00F80000009E0000000000000000000000000000000000000000000000000000
+      0042000000FF0000007700000023000000BC000000FF000000B3000000D20000
+      00DF0000000D0000000000000000000000400000003000000002000000090000
+      00DB000000D000000004000000000000000000000061000000ED000000FD0000
+      003D000000000000000000000000000000EA000000FB0000002F000000880000
+      00FC0000003400000000000000000000000000000000000000160000003F0000
+      00000000000000000000000000000000000F000000330000002F000000FB0000
+      008E0000002C000000EA00000063000000000000000000000000000000000000
+      00000000000000000077000000CA0000000000000003000000CB000000DF0000
+      000B00000031000000AF000000FF0000009D0000000800000000000000000000
+      000200000092000000FF000000910000000000000071000000FF000000480000
+      0000000000000000000000000072000000FB000000CE00000022000000070000
+      00A9000000FF0000007B000000000000001F000000F4000000A4000000000000
+      00000000000000000000000000000000003D000000E6000000EF000000C80000
+      00FB000000620000000000000000000000B6000000EC00000015000000000000
+      00000000000000000000000000000000000000000018000000C0000000F50000
+      004C000000000000000000000000000000C10000005600000000000000000000
+      0000000000000000000000000000000000000000000000000003000000140000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      000000000053000000DC000000FA000000FA000000DC00000053000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000B4000000B00000008C0000008C000000B0000000B4000000000000
+      0000000000580000004300000000000000000000000000000000000000000000
+      00000000002C0000007F000000A7000000A70000007F0000002C000000000000
+      0063000000FE000000F9000000340000000000000000000000000000000D0000
+      00A3000000FE000000FF000000F5000000F5000000FF000000FE000000A30000
+      0034000000E2000000DF0000001C00000000000000000000000A000000C90000
+      00FF000000A00000002B00000000000000000000002B000000A0000000FF0000
+      00C9000000350000001F00000000000000000000000000000090000000FF0000
+      006E0000001500000047000000000000000000000000000000000000006E0000
+      00FF0000009000000000000000000000000000000014000000F8000000B60000
+      000000000005000000EC00000052000000000000000000000000000000000000
+      00B6000000F800000013000000000000000000000057000000FF0000004F0000
+      0000000000000000009D000000F80000003A0000000000000000000000000000
+      004F000000FF00000057000000000000000000000077000000FF000000240000
+      00000000000000000034000000FF000000DD0000000000000000000000000000
+      0024000000FF0000007700000000000000000000006F000000FF0000002E0000
+      000000000000000000000000008A000000890000000000000000000000000000
+      002E000000FF0000006F00000000000000000000003F000000FF000000700000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0070000000FF0000003F000000000000000000000003000000DE000000E30000
+      0010000000000000000000000000000000000000000000000000000000100000
+      00E3000000DE000000030000000000000000000000000000004E000000FF0000
+      00C4000000160000000000000000000000000000000000000016000000C40000
+      00FF0000004E0000000000000000000000000000000000000000000000710000
+      00FD000000F0000000910000005B0000005B00000091000000F0000000FD0000
+      0071000000000000000000000000000000000000000000000000000000000000
+      003F000000C5000000FF000000FF000000FF000000FF000000C50000003E0000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000001900000041000000410000001900000000000000000000
+      0000000000000000000000000000
+    }
+  end
+end

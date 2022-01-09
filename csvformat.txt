@@ -1,0 +1,5 @@
+L0 > Recipe Data (name etc) [Recipe, Length, Author, Summary, URL, Servings, Cost]
+Ingredients Data [SHA256, Name, aka, UnitSize, UnitType, URL, Optionality, [alternativeGUID]]
+Method Data [[Steps]{n0..}(minutes)]
+Recipe Photo 512x512 [recipe-photo](n}b64
+Author Photo 128x128 bitmap (b64) [author-photo]b64
