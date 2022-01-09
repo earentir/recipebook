@@ -29,6 +29,7 @@ type
     Panel7: TPanel;
     SpkCheckbox1: TSpkCheckbox;
     SpkLargeButton1: TSpkLargeButton;
+    SpkLargeButton2: TSpkLargeButton;
     SpkPane1: TSpkPane;
     SpkPane2: TSpkPane;
     SpkRadioButton1: TSpkRadioButton;

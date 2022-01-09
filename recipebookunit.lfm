@@ -285,7 +285,12 @@ object Form1: TForm1
       )
       object SpkPane2: TSpkPane
         Caption = 'New Recipe'
-        Items = (        )
+        Items = (
+          'SpkLargeButton2'
+        )
+        object SpkLargeButton2: TSpkLargeButton
+          Caption = 'Button'
+        end
       end
     end
   end
