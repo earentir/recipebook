@@ -112,7 +112,9 @@ begin
     Length(ExtractFileName(recipefile)) - Length(ExtractFileExt(recipefile))) + '.jpeg';
 
   if FileExists(imgfile) then
-    ImagePreview.Picture.LoadFromFile(imgfile);
+    ImagePreview.Picture.Jpeg.LoadFromFile(imgfile)
+  else
+    ImagePreview.Picture.Jpeg.LoadFromStream(base64tostream(bitmaptobase64(imgfile)));
 end;
 
 procedure TForm1.TimerTimeSepTimer(Sender: TObject);

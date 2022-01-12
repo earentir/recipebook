@@ -5,7 +5,7 @@ unit recipeparserunit;
 interface
 
 uses
-  Classes, SysUtils, Grids;
+  Classes, SysUtils, Grids, Graphics;
 
 procedure gridColResize(colIndex: integer; Grid: TStringGrid);
 procedure parseIngredients(recipeFile: string; Grid: TstringGrid);
@@ -52,13 +52,16 @@ begin
         begin
           if csv.Cells[0, i].Substring(0, Length(ingstr)) = ingstr then
           begin
-            partstr := csv.Cells[0, i].Substring(length(ingstr), length(csv.Cells[0, i]) - Length(ingstr)).Replace('{', '').Replace('}', '');
+            partstr := csv.Cells[0, i].Substring(length(ingstr),
+              length(csv.Cells[0, i]) - Length(ingstr)).Replace('{',
+              '').Replace('}', '');
           end;
 
           if (partstr <> '') and (csv.Cells[0, i].Substring(0, 1) <> '[') then
           begin
             if csv.Cells[0, i].Substring(0, Length(ingstr)) <> ingstr then
-              grid.InsertRowWithValues(grid.RowCount, [partstr, csv.Cells[0, i], csv.Cells[2, i], csv.Cells[3, i]]);
+              grid.InsertRowWithValues(grid.RowCount,
+                [partstr, csv.Cells[0, i], csv.Cells[2, i], csv.Cells[3, i]]);
           end;
         end;
         gridColResize(1, Grid);
@@ -107,5 +110,13 @@ begin
   end;
 end;
 
-end.
+function getEmbeddedRecipeImage(recipeFile: string; index: integer): TPicture;
+var
+  bitmap: TPicture;
+begin
+  //bitmap := TPicture.Jpeg;
+  //bitmap.LoadFromStream();
+end;
 
+
+end.
