@@ -8,6 +8,7 @@ uses
   Classes, SysUtils, base64;
 
 function bitmaptobase64(filename: string): string;
+function base64tostream(base64: string): TStream;
 
 implementation
 
@@ -38,12 +39,29 @@ begin
     Result := '';
 end;
 
+function base64tostream(base64: string): TStream;
+var
+  encodedata: TStringStream;
+  decodedata: TMemoryStream;
+  decoder: TBase64DecodingStream;
+begin
+
+  if base64 <> '' then
+  begin
+    encodedata := TStringStream.Create(base64);
+
+    decodedata := TMemoryStream.Create;
+    decoder := TBase64DecodingStream.Create(encodedata);
+
+    decodedata.CopyFrom(decoder, decoder.Size);
+    decodedata.Position := 0;
+
+    Result := decodedata;
+  end;
+
+  encodedata.Free;
+  //decodedata.Free;
+  decoder.Free;
+end;
+
 end.
-
-
-
-
-
-
-
-
