@@ -79,7 +79,8 @@ procedure LoadRecipes(Grid: TStringGrid);
 var
   recipefile: string;
 begin
-  for recipefile in FindAllFiles(GetCurrentDir + PathDelim + 'recipes', '*.recipebook', False) do
+  for recipefile in FindAllFiles(GetCurrentDir + PathDelim + 'recipes',
+      '*.recipebook', False) do
   begin
     parseRecipe(recipefile, Grid);
   end;
@@ -92,10 +93,7 @@ begin
   LoadRecipes(StringGridBrowser);
 
   if StringGridBrowser.RowCount > 0 then
-    parseIngredients(StringGridBrowser.Cells[0, 1], StringGridIngredients);
-
-  //playing with image
-  ImagePreview.Picture.LoadFromFile('img/recipe.jpeg');
+    StringGridBrowserSelection(self, 0, 1);
 end;
 
 procedure TForm1.SpkToolbar1TabChanged(Sender: TObject);
@@ -104,8 +102,17 @@ begin
 end;
 
 procedure TForm1.StringGridBrowserSelection(Sender: TObject; aCol, aRow: integer);
+var
+  imgfile, recipefile: string;
 begin
-  parseIngredients(StringGridBrowser.Cells[0, arow], StringGridIngredients);
+  recipefile := StringGridBrowser.Cells[0, arow];
+  parseIngredients(recipefile, StringGridIngredients);
+
+  imgfile := 'img/' + copy(ExtractFileName(recipefile), 0,
+    Length(ExtractFileName(recipefile)) - Length(ExtractFileExt(recipefile))) + '.jpeg';
+
+  if FileExists(imgfile) then
+    ImagePreview.Picture.LoadFromFile(imgfile);
 end;
 
 procedure TForm1.TimerTimeSepTimer(Sender: TObject);
@@ -121,11 +128,3 @@ end;
 
 
 end.
-
-
-
-
-
-
-
-
