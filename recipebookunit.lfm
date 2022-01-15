@@ -1,9 +1,9 @@
-object Form1: TForm1
+object RecipeBookForm: TRecipeBookForm
   Left = 345
   Height = 552
   Top = 250
   Width = 800
-  Caption = 'Form1'
+  Caption = 'RecipeBookForm'
   ClientHeight = 552
   ClientWidth = 800
   OnCreate = FormCreate
@@ -344,6 +344,7 @@ object Form1: TForm1
               Width = 387
               Align = alClient
               Center = True
+              OnMouseEnter = ImagePreviewMouseEnter
               Proportional = True
             end
           end

@@ -1,0 +1,20 @@
+object FormImagePreview: TFormImagePreview
+  Left = 347
+  Height = 512
+  Top = 0
+  Width = 512
+  BorderStyle = bsNone
+  Caption = 'FormImagePreview'
+  ClientHeight = 512
+  ClientWidth = 512
+  FormStyle = fsStayOnTop
+  OnCreate = FormCreate
+  object Image1: TImage
+    Left = 0
+    Height = 512
+    Top = 0
+    Width = 512
+    Align = alClient
+    OnMouseLeave = Image1MouseLeave
+  end
+end

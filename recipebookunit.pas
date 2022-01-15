@@ -11,9 +11,9 @@ uses
 
 type
 
-  { TForm1 }
+  { TRecipeBookForm }
 
-  TForm1 = class(TForm)
+  TRecipeBookForm = class(TForm)
     ImageListGridHeaders16: TImageList;
     ImagePreview: TImage;
     ImageGuide: TImage;
@@ -49,6 +49,7 @@ type
     TabSheet3: TTabSheet;
     TimerTimeSep: TTimer;
     procedure FormCreate(Sender: TObject);
+    procedure ImagePreviewMouseEnter(Sender: TObject);
     procedure SpkToolbar1TabChanged(Sender: TObject);
     procedure StringGridBrowserSelection(Sender: TObject; aCol, aRow: integer);
     procedure TimerTimeSepTimer(Sender: TObject);
@@ -60,18 +61,18 @@ type
   end;
 
 var
-  Form1: TForm1;
+  RecipeBookForm: TRecipeBookForm;
 
 implementation
 
-uses recipeparserunit, bitmapmanipulation;
+uses recipeparserunit, bitmapmanipulation, imagefpreviewpopupunit;
 
 {$R *.lfm}
 
 type
   ArrayString = array of string;
 
-{ TForm1 }
+{ TRecipeBookForm }
 
 //Icon Attribution: Entypo pictograms by Daniel Bruce — www.entypo.com
 
@@ -87,7 +88,7 @@ begin
 end;
 
 //ToDo: Ingredients: Unit, x, name, alternatives, optionality
-procedure TForm1.FormCreate(Sender: TObject);
+procedure TRecipeBookForm.FormCreate(Sender: TObject);
 begin
   PageControl1.ShowTabs := False;
   LoadRecipes(StringGridBrowser);
@@ -96,12 +97,25 @@ begin
     StringGridBrowserSelection(self, 0, 1);
 end;
 
-procedure TForm1.SpkToolbar1TabChanged(Sender: TObject);
+procedure TRecipeBookForm.ImagePreviewMouseEnter(Sender: TObject);
+begin
+  FormImagePreview.Top := RecipeBookForm.Top + (PageControl1.Top +
+    ((ImagePreview.Height div 2) - (FormImagePreview.Height div 2)));
+
+  FormImagePreview.Left := RecipeBookForm.Left +
+    (Panel2.Left + ((ImagePreview.Width div 2) - FormImagePreview.Width div 2));
+
+  FormImagePreview.Image1.Picture := ImagePreview.Picture;
+  FormImagePreview.Show;
+end;
+
+procedure TRecipeBookForm.SpkToolbar1TabChanged(Sender: TObject);
 begin
   PageControl1.ActivePageIndex := SpkToolbar1.TabIndex;
 end;
 
-procedure TForm1.StringGridBrowserSelection(Sender: TObject; aCol, aRow: integer);
+procedure TRecipeBookForm.StringGridBrowserSelection(Sender: TObject;
+  aCol, aRow: integer);
 var
   imgfile, recipefile: string;
 begin
@@ -118,7 +132,7 @@ begin
     ImagePreview.Picture := getEmbeddedRecipeImage(recipefile, 0);
 end;
 
-procedure TForm1.TimerTimeSepTimer(Sender: TObject);
+procedure TRecipeBookForm.TimerTimeSepTimer(Sender: TObject);
 var
   timerCaption: string;
 begin
