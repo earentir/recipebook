@@ -10,8 +10,11 @@ uses
 procedure gridColResize(colIndex: integer; Grid: TStringGrid);
 procedure parseIngredients(recipeFile: string; Grid: TstringGrid);
 procedure parseRecipe(recipeFile: string; Grid: TstringGrid);
+function getEmbeddedRecipeImage(recipeFilename: string; index: integer): TPicture;
 
 implementation
+
+uses bitmapmanipulation;
 
 procedure gridColResize(colIndex: integer; Grid: TStringGrid);
 var
@@ -110,12 +113,32 @@ begin
   end;
 end;
 
-function getEmbeddedRecipeImage(recipeFile: string; index: integer): TPicture;
+function getEmbeddedRecipeImage(recipeFilename: string; index: integer): TPicture;
 var
   bitmap: TPicture;
+  recipeFileData, base64Images: TStringList;
+  i: integer;
+  phototype: array of string = ('[recipe-photo]', '[author-photo]');
 begin
-  //bitmap := TPicture.Jpeg;
-  //bitmap.LoadFromStream();
+  recipeFileData := TStringList.Create;
+  recipeFileData.LoadFromFile(recipeFilename);
+
+  base64Images := TStringList.Create;
+
+  bitmap := TPicture.Create;
+
+
+  for i := 0 to recipeFileData.Count - 1 do
+  begin
+    if copy(recipeFileData.Strings[i], 0, Length(phototype[0])) = phototype[0] then
+      base64Images.Add(copy(recipeFileData.Strings[i], Length(phototype[0])+3+1,
+        Length(recipeFileData.Strings[i])));
+  end;
+
+  bitmap.Jpeg.LoadFromStream(base64tostream(base64Images.Strings[index]));
+
+  Result := bitmap;
+
 end;
 
 
