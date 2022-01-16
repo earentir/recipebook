@@ -15,8 +15,8 @@ type
 
   TRecipeBookForm = class(TForm)
     ImageListGridHeaders16: TImageList;
-    ImagePreview: TImage;
     ImageGuide: TImage;
+    ImagePreview: TImage;
     Label1: TLabel;
     LabelTimer: TLabel;
     PageControl1: TPageControl;
@@ -49,10 +49,13 @@ type
     TabSheet3: TTabSheet;
     TimerTimeSep: TTimer;
     procedure FormCreate(Sender: TObject);
+    procedure FormResize(Sender: TObject);
     procedure ImagePreviewMouseEnter(Sender: TObject);
+    procedure Panel3Resize(Sender: TObject);
     procedure SpkToolbar1TabChanged(Sender: TObject);
     procedure StringGridBrowserSelection(Sender: TObject; aCol, aRow: integer);
     procedure TimerTimeSepTimer(Sender: TObject);
+    procedure ImagePreviewResize(Sender: TObject);
 
   private
 
@@ -93,8 +96,27 @@ begin
   PageControl1.ShowTabs := False;
   LoadRecipes(StringGridBrowser);
 
+  ImagePreviewResize(Self);
+
   if StringGridBrowser.RowCount > 0 then
     StringGridBrowserSelection(self, 0, 1);
+end;
+
+procedure TRecipeBookForm.ImagePreviewResize(Sender: TObject);
+begin
+  if ImagePreview.Width <= (ImagePreview.Parent as TPanel).Width then
+  begin
+    ImagePreview.Height := (ImagePreview.Parent as TPanel).Height;
+    ImagePreview.Width := (ImagePreview.Parent as TPanel).Height;
+
+    ImagePreview.Left := ((ImagePreview.Parent as TPanel).Width div 2) -
+      (ImagePreview.Width div 2);
+  end;
+end;
+
+procedure TRecipeBookForm.FormResize(Sender: TObject);
+begin
+  ImagePreviewResize(Self);
 end;
 
 procedure TRecipeBookForm.ImagePreviewMouseEnter(Sender: TObject);
@@ -102,11 +124,16 @@ begin
   FormImagePreview.Top := RecipeBookForm.Top + (PageControl1.Top +
     ((ImagePreview.Height div 2) - (FormImagePreview.Height div 2)));
 
-  FormImagePreview.Left := RecipeBookForm.Left +
-    (Panel2.Left + ((ImagePreview.Width div 2) - FormImagePreview.Width div 2));
+  FormImagePreview.Left := RecipeBookForm.Left + (Panel2.Left +
+    ((ImagePreview.Width div 2) - FormImagePreview.Width div 2));
 
   FormImagePreview.Image1.Picture := ImagePreview.Picture;
   FormImagePreview.Show;
+end;
+
+procedure TRecipeBookForm.Panel3Resize(Sender: TObject);
+begin
+  ImagePreviewResize(Self);
 end;
 
 procedure TRecipeBookForm.SpkToolbar1TabChanged(Sender: TObject);
@@ -124,7 +151,6 @@ begin
 
   imgfile := 'img/' + copy(ExtractFileName(recipefile), 0,
     Length(ExtractFileName(recipefile)) - Length(ExtractFileExt(recipefile))) + '.jpeg';
-
 
   if FileExists(imgfile) then
     ImagePreview.Picture.Jpeg.LoadFromFile(imgfile)

@@ -16,5 +16,6 @@ object FormImagePreview: TFormImagePreview
     Width = 512
     Align = alClient
     OnMouseLeave = Image1MouseLeave
+    Proportional = True
   end
 end
