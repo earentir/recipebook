@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, Grids, ExtCtrls,
-  StdCtrls, ComCtrls, SpkToolbar, spkt_Tab, spkt_Pane, spkt_Buttons,
+  StdCtrls, ComCtrls, Spin, SpkToolbar, spkt_Tab, spkt_Pane, spkt_Buttons,
   spkt_Checkboxes, FileUtil;
 
 type
@@ -14,12 +14,28 @@ type
   { TRecipeBookForm }
 
   TRecipeBookForm = class(TForm)
+    ComboBoxHours: TComboBox;
+    ComboBoxMinutes: TComboBox;
+    ComboBox3: TComboBox;
+    ComboBox4: TComboBox;
+    Edit1: TEdit;
+    Edit2: TEdit;
     ImageListGridHeaders16: TImageList;
     ImageGuide: TImage;
     ImagePreview: TImage;
     Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    Label4: TLabel;
+    Label5: TLabel;
+    Label6: TLabel;
+    Label7: TLabel;
     LabelTimer: TLabel;
+    Memo1: TMemo;
     PageControl1: TPageControl;
+    PageControlMain: TPageControl;
+    PanelDetailsLeft: TPanel;
+    PanelDetails: TPanel;
     PanelBrowser: TPanel;
     PanelBrowserRight: TPanel;
     PanelImagePreview: TPanel;
@@ -44,10 +60,15 @@ type
     StringGridBrowser: TStringGrid;
     StringGridIngredients: TStringGrid;
     StringGridRecipeSteps: TStringGrid;
+    TabSheet1: TTabSheet;
+    TabSheet4: TTabSheet;
+    TabSheet5: TTabSheet;
     TabSheetBrowser: TTabSheet;
     TabSheet2: TTabSheet;
     TabSheet3: TTabSheet;
     TimerTimeSep: TTimer;
+    procedure ComboBoxHoursKeyDown(Sender: TObject; var Key: word;
+      Shift: TShiftState);
     procedure FormCreate(Sender: TObject);
     procedure FormResize(Sender: TObject);
     procedure ImagePreviewMouseEnter(Sender: TObject);
@@ -92,14 +113,38 @@ end;
 
 //ToDo: Ingredients: Unit, x, name, alternatives, optionality
 procedure TRecipeBookForm.FormCreate(Sender: TObject);
+var
+  i: integer;
 begin
-  PageControl1.ShowTabs := False;
+  PageControlMain.ShowTabs := False;
   LoadRecipes(StringGridBrowser);
 
   ImagePreviewResize(Self);
 
   if StringGridBrowser.RowCount > 0 then
     StringGridBrowserSelection(self, 0, 1);
+
+  for i := 0 to 59 do
+  begin
+    if i <= 12 then
+      ComboBoxHours.Items.Add(IntToStr(i));
+
+    ComboBoxMinutes.Items.Add(IntToStr(i));
+  end;
+  ComboBoxHours.ItemIndex := 0;
+  ComboBoxMinutes.ItemIndex := 0;
+
+end;
+
+procedure TRecipeBookForm.ComboBoxHoursKeyDown(Sender: TObject;
+  var Key: word; Shift: TShiftState);
+begin
+  writeln(key);
+
+  if ((key > 46) and (key < 58)) or (key = 8) or ((key >= 35) and (key <= 40)) then
+  //key := key
+  else
+    key := 0;
 end;
 
 procedure TRecipeBookForm.ImagePreviewResize(Sender: TObject);
@@ -122,7 +167,7 @@ end;
 
 procedure TRecipeBookForm.ImagePreviewMouseEnter(Sender: TObject);
 begin
-  FormImagePreview.Top := RecipeBookForm.Top + (PageControl1.Top +
+  FormImagePreview.Top := RecipeBookForm.Top + (PageControlMain.Top +
     ((ImagePreview.Height div 2) - (FormImagePreview.Height div 2)));
 
   FormImagePreview.Left := RecipeBookForm.Left +
@@ -140,7 +185,7 @@ end;
 
 procedure TRecipeBookForm.SpkToolbar1TabChanged(Sender: TObject);
 begin
-  PageControl1.ActivePageIndex := SpkToolbar1.TabIndex;
+  PageControlMain.ActivePageIndex := SpkToolbar1.TabIndex;
 end;
 
 procedure TRecipeBookForm.StringGridBrowserSelection(Sender: TObject;
