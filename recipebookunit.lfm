@@ -609,23 +609,37 @@ object RecipeBookForm: TRecipeBookForm
                 Width = 43
                 Caption = 'Minutes'
               end
-              object ComboBox3: TComboBox
+              object ComboBoxDifficulty: TComboBox
                 Left = 152
                 Height = 23
                 Top = 208
-                Width = 44
+                Width = 60
                 ItemHeight = 15
+                Style = csDropDownList
                 TabOrder = 5
-                Text = 'ComboBox3'
               end
-              object ComboBox4: TComboBox
-                Left = 216
+              object ComboBoxCost: TComboBox
+                Left = 224
                 Height = 23
                 Top = 208
-                Width = 44
+                Width = 60
                 ItemHeight = 15
+                Style = csDropDownList
                 TabOrder = 6
-                Text = 'ComboBox4'
+              end
+              object Label8: TLabel
+                Left = 152
+                Height = 15
+                Top = 192
+                Width = 48
+                Caption = 'Difficulty'
+              end
+              object Label9: TLabel
+                Left = 224
+                Height = 15
+                Top = 192
+                Width = 24
+                Caption = 'Cost'
               end
             end
           end

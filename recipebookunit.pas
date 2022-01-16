@@ -16,8 +16,8 @@ type
   TRecipeBookForm = class(TForm)
     ComboBoxHours: TComboBox;
     ComboBoxMinutes: TComboBox;
-    ComboBox3: TComboBox;
-    ComboBox4: TComboBox;
+    ComboBoxDifficulty: TComboBox;
+    ComboBoxCost: TComboBox;
     Edit1: TEdit;
     Edit2: TEdit;
     ImageListGridHeaders16: TImageList;
@@ -30,6 +30,8 @@ type
     Label5: TLabel;
     Label6: TLabel;
     Label7: TLabel;
+    Label8: TLabel;
+    Label9: TLabel;
     LabelTimer: TLabel;
     Memo1: TMemo;
     PageControl1: TPageControl;
@@ -129,18 +131,32 @@ begin
     if i <= 12 then
       ComboBoxHours.Items.Add(IntToStr(i));
 
+    if i <= 4 then
+    begin
+      if ComboBoxCost.Items.Count > 0 then
+      begin
+        ComboBoxCost.Items.Add(ComboBoxCost.Items.Strings[i - 1] + '€');
+        ComboBoxDifficulty.Items.Add(ComboBoxDifficulty.Items.Strings[i - 1] + '*');
+      end
+      else
+      begin
+        ComboBoxCost.Items.Add('€');
+        ComboBoxDifficulty.Items.Add('*');
+      end;
+    end;
+
     ComboBoxMinutes.Items.Add(IntToStr(i));
   end;
+
   ComboBoxHours.ItemIndex := 0;
   ComboBoxMinutes.ItemIndex := 0;
-
+  ComboBoxCost.ItemIndex := 0;
+  ComboBoxDifficulty.ItemIndex := 0;
 end;
 
 procedure TRecipeBookForm.ComboBoxHoursKeyDown(Sender: TObject;
   var Key: word; Shift: TShiftState);
 begin
-  writeln(key);
-
   if ((key > 46) and (key < 58)) or (key = 8) or ((key >= 35) and (key <= 40)) then
   //key := key
   else
