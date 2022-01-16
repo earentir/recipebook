@@ -20,10 +20,10 @@ type
     Label1: TLabel;
     LabelTimer: TLabel;
     PageControl1: TPageControl;
-    Panel1: TPanel;
-    Panel2: TPanel;
-    Panel3: TPanel;
-    Panel4: TPanel;
+    PanelBrowser: TPanel;
+    PanelBrowserRight: TPanel;
+    PanelImagePreview: TPanel;
+    PanelIngredients: TPanel;
     Panel5: TPanel;
     Panel6: TPanel;
     Panel7: TPanel;
@@ -44,14 +44,14 @@ type
     StringGridBrowser: TStringGrid;
     StringGridIngredients: TStringGrid;
     StringGridRecipeSteps: TStringGrid;
-    TabSheet1: TTabSheet;
+    TabSheetBrowser: TTabSheet;
     TabSheet2: TTabSheet;
     TabSheet3: TTabSheet;
     TimerTimeSep: TTimer;
     procedure FormCreate(Sender: TObject);
     procedure FormResize(Sender: TObject);
     procedure ImagePreviewMouseEnter(Sender: TObject);
-    procedure Panel3Resize(Sender: TObject);
+    procedure PanelImagePreviewResize(Sender: TObject);
     procedure SpkToolbar1TabChanged(Sender: TObject);
     procedure StringGridBrowserSelection(Sender: TObject; aCol, aRow: integer);
     procedure TimerTimeSepTimer(Sender: TObject);
@@ -117,6 +117,7 @@ end;
 procedure TRecipeBookForm.FormResize(Sender: TObject);
 begin
   ImagePreviewResize(Self);
+  StringGridBrowser.Width := PanelBrowser.Width div 2;
 end;
 
 procedure TRecipeBookForm.ImagePreviewMouseEnter(Sender: TObject);
@@ -124,14 +125,15 @@ begin
   FormImagePreview.Top := RecipeBookForm.Top + (PageControl1.Top +
     ((ImagePreview.Height div 2) - (FormImagePreview.Height div 2)));
 
-  FormImagePreview.Left := RecipeBookForm.Left + (Panel2.Left +
-    ((ImagePreview.Width div 2) - FormImagePreview.Width div 2));
+  FormImagePreview.Left := RecipeBookForm.Left +
+    (PanelBrowserRight.Left + ((ImagePreview.Width div 2) -
+    FormImagePreview.Width div 2));
 
   FormImagePreview.Image1.Picture := ImagePreview.Picture;
   FormImagePreview.Show;
 end;
 
-procedure TRecipeBookForm.Panel3Resize(Sender: TObject);
+procedure TRecipeBookForm.PanelImagePreviewResize(Sender: TObject);
 begin
   ImagePreviewResize(Self);
 end;

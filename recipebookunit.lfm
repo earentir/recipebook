@@ -300,15 +300,15 @@ object RecipeBookForm: TRecipeBookForm
     Height = 440
     Top = 112
     Width = 800
-    ActivePage = TabSheet1
+    ActivePage = TabSheetBrowser
     Align = alClient
     TabIndex = 0
     TabOrder = 1
-    object TabSheet1: TTabSheet
+    object TabSheetBrowser: TTabSheet
       Caption = 'Browser'
       ClientHeight = 412
       ClientWidth = 792
-      object Panel1: TPanel
+      object PanelBrowser: TPanel
         Left = 0
         Height = 412
         Top = 0
@@ -318,27 +318,27 @@ object RecipeBookForm: TRecipeBookForm
         ClientHeight = 412
         ClientWidth = 792
         TabOrder = 0
-        object Panel2: TPanel
-          Left = 405
+        object PanelBrowserRight: TPanel
+          Left = 408
           Height = 412
           Top = 0
-          Width = 387
+          Width = 384
           Align = alClient
           BevelOuter = bvNone
           ClientHeight = 412
-          ClientWidth = 387
+          ClientWidth = 384
           TabOrder = 0
-          object Panel3: TPanel
+          object PanelImagePreview: TPanel
             Left = 0
             Height = 130
             Top = 0
-            Width = 387
+            Width = 384
             Align = alTop
             BevelOuter = bvNone
             ClientHeight = 130
-            ClientWidth = 387
+            ClientWidth = 384
             TabOrder = 0
-            OnResize = Panel3Resize
+            OnResize = PanelImagePreviewResize
             object ImagePreview: TImage
               Left = 4
               Height = 130
@@ -352,27 +352,27 @@ object RecipeBookForm: TRecipeBookForm
           object Splitter2: TSplitter
             Cursor = crVSplit
             Left = 0
-            Height = 5
+            Height = 8
             Top = 130
-            Width = 387
+            Width = 384
             Align = alTop
             ResizeAnchor = akTop
           end
-          object Panel4: TPanel
+          object PanelIngredients: TPanel
             Left = 0
-            Height = 277
-            Top = 135
-            Width = 387
+            Height = 274
+            Top = 138
+            Width = 384
             Align = alClient
             BevelOuter = bvNone
-            ClientHeight = 277
-            ClientWidth = 387
+            ClientHeight = 274
+            ClientWidth = 384
             TabOrder = 2
             object StringGridIngredients: TStringGrid
               Left = 0
-              Height = 262
+              Height = 259
               Top = 15
-              Width = 387
+              Width = 384
               Align = alClient
               AutoEdit = False
               BorderStyle = bsNone
@@ -410,7 +410,7 @@ object RecipeBookForm: TRecipeBookForm
               Left = 0
               Height = 15
               Top = 0
-              Width = 387
+              Width = 384
               Align = alTop
               Caption = 'Ingredients'
             end
@@ -479,7 +479,8 @@ object RecipeBookForm: TRecipeBookForm
           Left = 400
           Height = 412
           Top = 0
-          Width = 5
+          Width = 8
+          MinSize = 150
         end
       end
     end
