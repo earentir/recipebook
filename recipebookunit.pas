@@ -20,6 +20,7 @@ type
     ComboBoxCost: TComboBox;
     Edit1: TEdit;
     Edit2: TEdit;
+    ImageCreateRecipe: TImage;
     ImageListGridHeaders16: TImageList;
     ImageGuide: TImage;
     ImagePreview: TImage;
@@ -34,8 +35,11 @@ type
     Label9: TLabel;
     LabelTimer: TLabel;
     Memo1: TMemo;
+    OpenDialog1: TOpenDialog;
     PageControl1: TPageControl;
     PageControlMain: TPageControl;
+    Panel1: TPanel;
+    Panel2: TPanel;
     PanelDetailsLeft: TPanel;
     PanelDetails: TPanel;
     PanelBrowser: TPanel;
@@ -73,6 +77,7 @@ type
       Shift: TShiftState);
     procedure FormCreate(Sender: TObject);
     procedure FormResize(Sender: TObject);
+    procedure ImageCreateRecipeDblClick(Sender: TObject);
     procedure ImagePreviewMouseEnter(Sender: TObject);
     procedure PanelImagePreviewResize(Sender: TObject);
     procedure SpkToolbar1TabChanged(Sender: TObject);
@@ -158,7 +163,8 @@ procedure TRecipeBookForm.ComboBoxHoursKeyDown(Sender: TObject;
   var Key: word; Shift: TShiftState);
 begin
   writeln(key);
-  if (key = 9) or ((key > 46) and (key < 58)) or (key = 8) or ((key >= 35) and (key <= 40)) then
+  if (key = 9) or ((key > 46) and (key < 58)) or (key = 8) or
+    ((key >= 35) and (key <= 40)) then
   //key := key
   else
     key := 0;
@@ -180,6 +186,17 @@ procedure TRecipeBookForm.FormResize(Sender: TObject);
 begin
   ImagePreviewResize(Self);
   StringGridBrowser.Width := PanelBrowser.Width div 2;
+end;
+
+procedure TRecipeBookForm.ImageCreateRecipeDblClick(Sender: TObject);
+begin
+  OpenDialog1.FileName := '';
+
+  OpenDialog1.Title := 'Open RecipePhoto';
+  OpenDialog1.Filter := 'Recipe Photo|*.jpeg;*.jpg';
+  OpenDialog1.Execute;
+
+  writeln(OpenDialog1.FileName);
 end;
 
 procedure TRecipeBookForm.ImagePreviewMouseEnter(Sender: TObject);
