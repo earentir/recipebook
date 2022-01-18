@@ -157,7 +157,8 @@ end;
 procedure TRecipeBookForm.ComboBoxHoursKeyDown(Sender: TObject;
   var Key: word; Shift: TShiftState);
 begin
-  if ((key > 46) and (key < 58)) or (key = 8) or ((key >= 35) and (key <= 40)) then
+  writeln(key);
+  if (key = 9) or ((key > 46) and (key < 58)) or (key = 8) or ((key >= 35) and (key <= 40)) then
   //key := key
   else
     key := 0;

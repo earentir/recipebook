@@ -8,6 +8,7 @@ object RecipeBookForm: TRecipeBookForm
   ClientWidth = 800
   OnCreate = FormCreate
   OnResize = FormResize
+  LCLVersion = '2.2.0.4'
   object SpkToolbar1: TSpkToolbar
     Left = 0
     Height = 112
@@ -554,7 +555,7 @@ object RecipeBookForm: TRecipeBookForm
                 Caption = 'Summary'
               end
               object Label5: TLabel
-                Left = 48
+                Left = 54
                 Height = 15
                 Top = 212
                 Width = 3
@@ -587,30 +588,30 @@ object RecipeBookForm: TRecipeBookForm
                 Left = 0
                 Height = 23
                 Top = 208
-                Width = 44
+                Width = 50
                 ItemHeight = 15
                 OnKeyDown = ComboBoxHoursKeyDown
                 TabOrder = 3
                 Text = 'ComboBoxHours'
               end
               object ComboBoxMinutes: TComboBox
-                Left = 56
+                Left = 61
                 Height = 23
                 Top = 208
-                Width = 48
+                Width = 50
                 ItemHeight = 15
                 TabOrder = 4
                 Text = 'ComboBoxMinutes'
               end
               object Label7: TLabel
-                Left = 56
+                Left = 61
                 Height = 15
                 Top = 192
                 Width = 43
                 Caption = 'Minutes'
               end
               object ComboBoxDifficulty: TComboBox
-                Left = 152
+                Left = 272
                 Height = 23
                 Top = 208
                 Width = 60
@@ -619,7 +620,7 @@ object RecipeBookForm: TRecipeBookForm
                 TabOrder = 5
               end
               object ComboBoxCost: TComboBox
-                Left = 224
+                Left = 344
                 Height = 23
                 Top = 208
                 Width = 60
@@ -628,14 +629,14 @@ object RecipeBookForm: TRecipeBookForm
                 TabOrder = 6
               end
               object Label8: TLabel
-                Left = 152
+                Left = 272
                 Height = 15
                 Top = 192
                 Width = 48
                 Caption = 'Difficulty'
               end
               object Label9: TLabel
-                Left = 224
+                Left = 344
                 Height = 15
                 Top = 192
                 Width = 24
