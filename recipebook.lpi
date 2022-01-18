@@ -16,6 +16,9 @@
         <DpiAware Value="True"/>
       </XPManifest>
       <Icon Value="0"/>
+      <Resources Count="1">
+        <Resource_0 FileName="media\imagena.jpg" Type="RCDATA" ResourceName="IMAGENA"/>
+      </Resources>
     </General>
     <BuildModes Count="3">
       <Item1 Name="Default" Default="True"/>

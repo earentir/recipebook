@@ -7,7 +7,7 @@ interface
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, Grids, ExtCtrls,
   StdCtrls, ComCtrls, Spin, SpkToolbar, spkt_Tab, spkt_Pane, spkt_Buttons,
-  spkt_Checkboxes, FileUtil;
+  spkt_Checkboxes, FileUtil, LCLType;
 
 type
 
@@ -107,6 +107,18 @@ type
 
 //Icon Attribution: Entypo pictograms by Daniel Bruce — www.entypo.com
 
+function loadBitmapFromResource(resourcename: string): TPicture;
+var
+  resource: TResourceStream;
+  bitmap: TPicture;
+begin
+  resource := TResourceStream.Create(HINSTANCE, resourcename, RT_RCDATA);
+  bitmap := TPicture.Create;
+  bitmap.Jpeg.LoadFromStream(resource);
+
+  Result := bitmap;
+end;
+
 procedure LoadRecipes(Grid: TStringGrid);
 var
   recipefile: string;
@@ -157,6 +169,9 @@ begin
   ComboBoxMinutes.ItemIndex := 0;
   ComboBoxCost.ItemIndex := 0;
   ComboBoxDifficulty.ItemIndex := 0;
+
+  //Load IMAGENA from resource to Image Components
+  ImageCreateRecipe.Picture := loadBitmapFromResource('IMAGENA');
 end;
 
 procedure TRecipeBookForm.ComboBoxHoursKeyDown(Sender: TObject;
